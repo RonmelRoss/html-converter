@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+<!--<h2>Responsive Navbar with Links of Same Width</h2>
+<p>Try to resize the browser window to see the responsive effect.</p>
+-->
+
+	<div class="navbar">
+	  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+	  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+	  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+	  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+	</div>
+
+	<button class="collapsible">Section 1</button>
+		<div class="content">
+			<p>
+			  <label>Feet: </label>
+			  <input id="inputFeet" type="number" placeholder="Feet"
+			  oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+			</p>
+			<p>Meters: <span id="outputMeters"></span></p>
+		</div>
+		
+	<button class="collapsible">Section 2</button>
+		<div class="content">
+		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		
+	<button class="collapsible">Section 3</button>
+		<div class="content">
+		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+	
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+			this.classList.toggle("active1");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+			  content.style.maxHeight = null;
+			} else {
+			  content.style.maxHeight = content.scrollHeight + "px";
+			} 
+		  });
+		}
+		
+		/* When the input field receives input, convert the value from feet to meters */
+		function lengthConverter(valNum) {
+		document.getElementById("outputMeters").innerHTML = valNum / 3.2808;
+}
+	</script>
+</body>
+</html> 
